@@ -1,32 +1,28 @@
-Given(/^I have a browser instance$/) do
-
-end
-
 Given(/^I am on ebay$/) do
-  visit "http://www.ebay.de/"
+  landing_page_ebay.load
 end
 
 When(/^I click on search$/) do
-  find("#gh-btn").click
+  landing_page_ebay.search_button.click
 end
 
 Then(/^Input field is loaded$/) do
-  page.should have_css "#gh-ac"
+  landing_page_ebay.should have_search_input
 end
 
 When(/^I enter mario$/) do
-  fill_in "gh-ac", with:"mario wii u"
+  landing_page_ebay.search_input.set "mario wii u"
 end
 
 Then(/^Mario item are shown$/) do
-  page.should have_css ".imgWr2"
+  search_results_page_ebay.should have_search_results
 end
 
 When(/^I click on the first item$/) do
-  first(".vip").click
+  search_results_page_ebay.search_results.first.click
 end
 
 Then(/^The product page is opened$/) do
-  page.should have_css "#isCartBtn_btn"
+  product_cart_page_ebay.should have_cart_button
 end
 
