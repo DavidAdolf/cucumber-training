@@ -1,7 +1,3 @@
-Given(/^I have a browser instance$/) do
-
-end
-
 Given(/^I am on google$/) do
   visit 'http://www.google.de'
 end
