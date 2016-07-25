@@ -4,9 +4,9 @@ end
 
 
 Around do |scenario,block|
-  puts "PENIS"
+  puts "TEST"
   block.call
-  puts "PENIS ENDE"
+  puts "TEST ENDE"
 end
 
 
